@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>血小板低到多少会出血？</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 Banner -->
+        <div class="banner">
+            <h1>血小板低到多少会出血？</h1>
+            <p>输入你的血小板数值，立即获取应对方案！</p>
+        </div>
+
+        <!-- 输入与反馈模块 -->
+        <div class="input-section">
+            <label for="platelet-count">请输入您的血小板计数（单位：×10⁹/L）：</label>
+            <input type="number" id="platelet-count" placeholder="例如：50" min="0" max="1000">
+            <button id="check-button">立即查询</button>
+        </div>
+
+        <!-- 结果反馈区 -->
+        <div class="result-section" id="result-section">
+            <div class="risk-level" id="risk-level">
+                <span id="risk-icon">🟢</span>
+                <span id="risk-text">轻度风险</span>
+            </div>
+            <div class="advice" id="advice">
+                <p>保持观察，避免剧烈运动，建议多吃富含铁/维生素C的食物。</p>
+            </div>
+        </div>
+
+        <!-- 扩展知识模块 -->
+        <div class="knowledge-section">
+            <h2>扩展知识</h2>
+            <ul>
+                <li><a href="#">血小板低是什么原因？</a></li>
+                <li><a href="#">输注血小板的注意事项</a></li>
+            </ul>
+        </div>
+
+        <!-- 行动引导模块 -->
+        <div class="action-section">
+            <button class="action-button">一键预约血液科专家</button>
+            <button class="action-button">加入血小板提升打卡群</button>
+        </div>
+
+        <!-- 免责声明 -->
+        <div class="disclaimer">
+            <p>本工具结果仅供参考，具体治疗请遵医嘱。如有紧急出血，请立即就医。</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

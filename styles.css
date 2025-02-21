@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner h1 {
+    color: #3A7BFF;
+    font-size: 24px;
+}
+
+.banner p {
+    color: #666;
+    font-size: 16px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+
+.input-section button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #3A7BFF;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.risk-level {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.risk-level span {
+    margin-right: 10px;
+}
+
+.advice {
+    font-size: 16px;
+    color: #333;
+}
+
+.knowledge-section, .action-section, .disclaimer {
+    margin-bottom: 20px;
+}
+
+.action-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FF4D4D;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
