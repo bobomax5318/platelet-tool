@@ -17,7 +17,9 @@
         <!-- 输入与反馈模块 -->
         <div class="input-section">
             <label for="platelet-count">请输入您的血小板计数（单位：×10⁹/L）：</label>
-            <input type="number" id="platelet-count" placeholder="例如：50" min="0" max="1000">
+            <input type="number" id="platelet-count" placeholder="例如：200" min="0" max="1000">
+            <!-- 正常范围提示 -->
+            <p class="normal-range">正常参考范围：125-350×10⁹/L</p>
             <button id="check-button">立即查询</button>
         </div>
 
@@ -25,10 +27,10 @@
         <div class="result-section" id="result-section">
             <div class="risk-level" id="risk-level">
                 <span id="risk-icon">🟢</span>
-                <span id="risk-text">轻度风险</span>
+                <span id="risk-text">正常范围</span>
             </div>
             <div class="advice" id="advice">
-                <p>保持观察，避免剧烈运动，建议多吃富含铁/维生素C的食物。</p>
+                <p>数值正常，保持定期复查，如有异常出血症状仍需就医。</p>
             </div>
         </div>
 
@@ -38,18 +40,20 @@
             <ul>
                 <li><a href="#">血小板低是什么原因？</a></li>
                 <li><a href="#">输注血小板的注意事项</a></li>
+                <li><a href="#">血小板增多可能预示哪些疾病？</a></li>
             </ul>
         </div>
 
         <!-- 行动引导模块 -->
         <div class="action-section">
-            <button class="action-button">一键预约血液科专家</button>
-            <button class="action-button">加入血小板提升打卡群</button>
+            <button class="action-button">一键查看上海市同济医院血液科专家门诊</button>
+            <button class="action-button">点击查看上海市同济医院CART团队联系方式</button>
         </div>
 
         <!-- 免责声明 -->
         <div class="disclaimer">
-            <p>本工具结果仅供参考，具体治疗请遵医嘱。如有紧急出血，请立即就医。</p>
+            <p>参考标准：《中国血液病诊疗指南（2023）》，具体治疗请遵医嘱。</p>
+            <p>本工具结果仅供参考，如有紧急出血，请立即就医。</p>
         </div>
     </div>
 
