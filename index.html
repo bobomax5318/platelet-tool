@@ -3,60 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>血小板低到多少会出血？</title>
+    <title>血小板自测工具</title>
+    <!-- Open Graph 元数据 -->
+    <meta property="og:title" content="血小板自测工具 - 快速了解您的健康状况">
+    <meta property="og:description" content="输入您的血小板数值，立即获取专业的健康建议！">
+    <meta property="og:image" content="https://your-domain.com/path/to/image.jpg">
+    <meta property="og:url" content="https://your-domain.com/path/to/page">
+    <meta property="og:type" content="website">
+    <!-- 页面样式 -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- 头部 Banner -->
-        <div class="banner">
-            <h1>血小板低到多少会出血？</h1>
-            <p>输入你的血小板数值，立即获取应对方案！</p>
-        </div>
-
-        <!-- 输入与反馈模块 -->
-        <div class="input-section">
-            <label for="platelet-count">请输入您的血小板计数（单位：×10⁹/L）：</label>
-            <input type="number" id="platelet-count" placeholder="例如：200" min="0" max="1000">
-            <!-- 正常范围提示 -->
-            <p class="normal-range">正常参考范围：125-350×10⁹/L</p>
-            <button id="check-button">立即查询</button>
-        </div>
-
-        <!-- 结果反馈区 -->
-        <div class="result-section" id="result-section">
-            <div class="risk-level" id="risk-level">
-                <span id="risk-icon">🟢</span>
-                <span id="risk-text">正常范围</span>
+        <h1>血小板自测工具</h1>
+        <form id="platelet-form">
+            <div class="form-group">
+                <label for="platelet-count">请输入您的血小板计数（单位：×10⁹/L）：</label>
+                <input type="number" id="platelet-count" placeholder="例如：200" min="0" max="1000" required>
             </div>
-            <div class="advice" id="advice">
-                <p>数值正常，保持定期复查，如有异常出血症状仍需就医。</p>
-            </div>
-        </div>
-
-        <!-- 扩展知识模块 -->
-        <div class="knowledge-section">
-            <h2>扩展知识</h2>
-            <ul>
-                <li><a href="#">血小板低是什么原因？</a></li>
-                <li><a href="#">输注血小板的注意事项</a></li>
-                <li><a href="#">血小板增多可能预示哪些疾病？</a></li>
-            </ul>
-        </div>
-
-        <!-- 行动引导模块 -->
-        <div class="action-section">
-            <button class="action-button">一键查看上海市同济医院血液科专家门诊</button>
-            <button class="action-button">点击查看上海市同济医院CART团队联系方式</button>
-        </div>
-
-        <!-- 免责声明 -->
-        <div class="disclaimer">
-            <p>参考标准：《中国血液病诊疗指南（2023）》，具体治疗请遵医嘱。</p>
-            <p>本工具结果仅供参考，如有紧急出血，请立即就医。</p>
-        </div>
+            <button type="submit">立即查询</button>
+        </form>
+        <div id="result" class="result"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // 表单提交逻辑
+        document.getElementById('platelet-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // 阻止表单默认提交行为
+
+            const plateletCount = parseInt(document.getElementById('platelet-count').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(plateletCount) || plateletCount < 0 || plateletCount > 1000) {
+                resultDiv.textContent = '请输入有效的血小板数值（0-1000）';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            let riskLevel, advice;
+            if (plateletCount < 20) {
+                riskLevel = '高危风险';
+                advice = '立即卧床休息，禁止任何可能出血的活动，紧急联系医院。';
+            } else if (plateletCount >= 20 && plateletCount < 50) {
+                riskLevel = '中度风险';
+                advice = '限制活动，避免磕碰，联系医生评估是否需要输注血小板。';
+            } else if (plateletCount >= 50 && plateletCount < 125) {
+                riskLevel = '轻度风险';
+                advice = '保持观察，避免剧烈运动，建议多吃富含铁/维生素C的食物。';
+            } else if (plateletCount >= 125 && plateletCount <= 350) {
+                riskLevel = '正常范围';
+                advice = '数值正常，保持定期复查，如有异常出血症状仍需就医。';
+            } else {
+                riskLevel = '血小板增多';
+                advice = '需排查骨髓增殖性疾病（如原发性血小板增多症），建议血液科就诊。';
+            }
+
+            resultDiv.innerHTML = `
+                <h2>风险等级：${riskLevel}</h2>
+                <p>建议：${advice}</p>
+            `;
+            resultDiv.style.color = '#333';
+        });
+    </script>
 </body>
 </html>
